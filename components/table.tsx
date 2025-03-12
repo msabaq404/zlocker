@@ -80,14 +80,15 @@ export default function Table() {
 
       <style>{`
         .table-container {
-            width: 100%;
-            margin: 20px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        table {
+          width: 100%;
+          margin: 20px auto;
+          border-radius: 10px;
+          overflow-x: scroll;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          
+          table {
+            min-width: 528px;
             width: 100%;
             border-collapse: collapse;
         }

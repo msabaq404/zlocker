@@ -19,6 +19,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 interface InfoProps {
   makeContributor: (value: boolean) => void;
   wannaLogin: boolean;
+  setWannaLogin: (value: boolean) => void;
 }
 
 interface InfoState {
@@ -78,6 +79,7 @@ export default function Info(props: InfoProps) {
       } else if (data) {
         document.cookie = `userData={"userId" : "${data[0].id}", "entry" : "${info[0]}", "fav_letter" : "${info[1]}", "fav_number" : "${info[2]}"}; max-age=88888888; Secure; SameSite=Strict`;
         props.makeContributor(true);
+        props.setWannaLogin(false);
       } else {
         alert("Not a contributor");
       }

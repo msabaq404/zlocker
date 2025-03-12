@@ -91,7 +91,7 @@ export default function Home() {
             </div>
 
           {justRegistered || wannaLogin ? (
-            <Info wannaLogin={wannaLogin} makeContributor={isContributorCheck} />
+            <Info wannaLogin={wannaLogin} setWannaLogin={setWannaLogin} makeContributor={isContributorCheck} />
           ) : null}
 
           {(!isContributor && !justRegistered && !wannaLogin) || wannaContribute ? (
