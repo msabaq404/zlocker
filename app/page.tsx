@@ -6,8 +6,9 @@ import Form from "../components/form";
 import Table from "../components/table";
 import Info from "../components/info";
 import { supabase } from "../lib/supabase";
-import { Button, CircularProgress } from "@mui/material";
+import {  CircularProgress } from "@mui/material";
 import { getUserData } from "@/lib/myutils";
+import Link from "next/link";
 
 export default function Home() {
   const [isContributor, setIsContributor] = React.useState(false);
@@ -71,9 +72,9 @@ export default function Home() {
 
   return (
     <div className="container">
-      <a href="/">
+      <Link href="/">
         <h1 className="logo">ZLocker</h1>
-      </a>
+      </Link>
 
       {isLoading ? (
         <Stack sx={{ color: "grey.500" }} spacing={2} direction="row">

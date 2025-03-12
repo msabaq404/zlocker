@@ -37,7 +37,7 @@ export default function Home(props: FormProps) {
 
         const { lockerId, error: e2 } = await fetchLockers(locker);
 
-        const { data: access, error: e4 } = await supabase
+        const { data: access} = await supabase
           .from("Contributors")
           .select("access_to")
           .eq("id", JSON.parse(getUserData(document.cookie)).userId);

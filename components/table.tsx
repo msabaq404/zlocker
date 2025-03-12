@@ -9,7 +9,7 @@ interface Contributions {
 }
 
 export default function Table() {
-  const [selectedLocker, setSelectedLocker] = React.useState<string>("");
+  // const [selectedLocker, setSelectedLocker] = React.useState<string>("");
   const [contributions, setContributions] = React.useState<Contributions[]>();
 
   const onLockerChange = async (locker: string) => {
@@ -21,7 +21,7 @@ export default function Table() {
     const lockerData = await fetchLockers(locker);
     const lockerId = lockerData.lockerId;
     console.log(lockerId, locker);
-    let { contributions, error } = await getContributions(lockerId![0].id);
+    const { contributions } = await getContributions(lockerId![0].id);
 
     setContributions(
       contributions?.map((contribution) => {
@@ -35,7 +35,7 @@ export default function Table() {
 
     console.log(contributions);
 
-    setSelectedLocker(locker);
+    // setSelectedLocker(locker);
   };
 
   return (
@@ -66,7 +66,7 @@ export default function Table() {
 
             <tr>
               <td>Alice</td>
-              <td>What is Newton's First Law?</td>
+              <td>{"What is Newton's First Law?"}</td>
               <td>It states that an object remains at rest...</td>
             </tr>
             <tr>

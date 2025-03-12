@@ -29,10 +29,12 @@ export const getContributions = async (lockerId: number) => {
 
 
   
-  let { data, error: e1 } = await supabase
+  const { data: dataTemp, error: e1 } = await supabase
   .from("Contributions")
   .select()
   .eq("locker", lockerId);
+
+  let data = dataTemp;
   
   const { data: users, error: e2 } = await supabase
   .from("Contributors")
